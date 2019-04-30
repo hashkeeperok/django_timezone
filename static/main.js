@@ -1,11 +1,9 @@
 function init() {
-    
     var myMap = new ymaps.Map('map', {
         center: [55.74, 37.58],
         zoom: 13,
         controls: []
     });
-    
     searchControl = new ymaps.control.SearchControl({
         options: {
             provider: 'yandex#search',
@@ -25,12 +23,10 @@ function init() {
     });
 
     myMap.controls.add(searchControl);
-    
     searchControl.search('Тюмень');
 }
 
 function calcTime(offset) {
-
     var d = new Date();
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     var nd = new Date(utc + (3600000*offset));
@@ -66,8 +62,8 @@ function getTimeZone(lat,lon){
 
     });
 }
-document.addEventListener("DOMContentLoaded", ready);
 
+document.addEventListener("DOMContentLoaded", ready);
 function ready() {
     timeOffset = 5;
     startTime();
